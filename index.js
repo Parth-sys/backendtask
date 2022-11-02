@@ -8,7 +8,7 @@ import { auth} from './middleware/auth.js'
 
 const app=express();
  dotenv.config();
-const Port=3000
+
 
 app.use(express.json({extended:false}))
 app.use(express.json());
@@ -160,7 +160,7 @@ app.get('/',(req,res)=>{
 })
 
 
-app.listen(Port,(req,res)=>{
-  console.log("server is running",Port)
+app.listen(process.env.Port || 3000,(req,res)=>{
+  console.log("server is running")
   
 })
